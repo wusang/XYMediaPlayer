@@ -34,6 +34,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Player" do |player|
     player.source_files =  'XYMediaPlayer/Audio/Player/**/*'
+    player.dependency 'XYMediaPlayer/Lrc'
   end
 
   s.subspec "Lrc" do |lrc|
