@@ -29,15 +29,18 @@ Pod::Spec.new do |s|
   s.resources = "XYMediaPlayer/XYMediaPlayer.bundle"
 
 
-  s.source_files = "XYMediaPlayer/*.{h,m}","XYMediaPlayer/Audio/*.{h,m}"
+  s.source_files = "XYMediaPlayer/*.{h,m}","XYMediaPlayer/Audio/*.{h,m}","XYMediaPlayer/Audio/Player/*.{h,m}","XYMediaPlayer/Audio/Lrc/*.{h,m}"
   
-  s.subspec "Lrc" do |lrc|
-    ss.source_files =  'XYMediaPlayer/Audio/Lrc/**/*'
-  end
 
   s.subspec "Player" do |player|
-    ss.source_files =  'XYMediaPlayer/Audio/Player/**/*'
+    player.source_files =  'XYMediaPlayer/Audio/Player/**/*'
   end
+
+  s.subspec "Lrc" do |lrc|
+    lrc.source_files =  'XYMediaPlayer/Audio/Lrc/**/*'
+  end 
+
+ 
 
    
 

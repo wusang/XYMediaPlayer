@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "XYElecTextProtocol.h"
 #import "XYLrcScrollProtocal.h"
 @interface XYLrcAudioView : UIView
 
@@ -18,7 +17,6 @@
 - (void)startPlay;
 - (void)stopPlay;
 - (void)destroyPlayer;
-//@property (nonatomic,assign) id<XYElecTextScrollProtocol> scrollDelegate;
 @property (nonatomic,assign) id<XYLrcScrollProtocal> scrollDelegate;
 @end
 

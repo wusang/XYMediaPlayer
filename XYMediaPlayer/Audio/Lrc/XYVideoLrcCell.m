@@ -9,7 +9,7 @@
 #import "XYVideoLrcCell.h"
 #import <Masonry/Masonry.h>
 #import <XYExtensions/XYExtensions.h>
-#import "XYMediaPlayer.h"
+
 @interface XYVideoLrcCell ()
 
 @property (nonatomic,strong) UILabel *labContent;

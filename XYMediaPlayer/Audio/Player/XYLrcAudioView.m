@@ -13,10 +13,8 @@
 #import "XYSubtitleParser.h"
 #import "XYVideoLrcModel.h"
 #import "XYGifView.h"
-#import "XYLrcScrollProtocal.h"
 #import "Masonry.h"
 #import <XYExtensions/XYExtensions.h>
-#import "XYMediaPlayer.h"
 #import "XYAlertHUD.h"
 NSString *const XYVoiceTextPlayerViewStopPlayNotification = @"XYVoiceTextPlayerViewStopPlayNotification";
 NSString *const XYVoiceTextPlayerViewPausePlayNotification = @"XYVoiceTextPlayerViewPausePlayNotification";

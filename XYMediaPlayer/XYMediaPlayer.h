@@ -12,5 +12,6 @@
 
 #import "XYLrcAudioView.h"
 #import "XYSubtitleParser.h"
+#import "XYLrcScrollProtocal.h"
 
 #endif /* XYMediaPlayer_h */

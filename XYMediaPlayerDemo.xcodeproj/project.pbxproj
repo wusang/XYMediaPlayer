@@ -150,15 +150,15 @@
 		D727A0A6234D7A3F00323F77 /* Lrc */ = {
 			isa = PBXGroup;
 			children = (
-				D727A0A7234D7A3F00323F77 /* XYSubtitleParser.m */,
-				D727A0A8234D7A3F00323F77 /* XYVideoLrcCell.m */,
-				D727A0A9234D7A3F00323F77 /* XYVideoLrcView.m */,
 				D727A0AA234D7A3F00323F77 /* XYLrcScrollProtocal.h */,
-				D727A0AB234D7A3F00323F77 /* XYVideoLrcModel.m */,
-				D727A0AC234D7A3F00323F77 /* XYVideoLrcCell.h */,
 				D727A0AD234D7A3F00323F77 /* XYSubtitleParser.h */,
+				D727A0A7234D7A3F00323F77 /* XYSubtitleParser.m */,
+				D727A0AC234D7A3F00323F77 /* XYVideoLrcCell.h */,
+				D727A0A8234D7A3F00323F77 /* XYVideoLrcCell.m */,
 				D727A0AE234D7A3F00323F77 /* XYVideoLrcModel.h */,
+				D727A0AB234D7A3F00323F77 /* XYVideoLrcModel.m */,
 				D727A0AF234D7A3F00323F77 /* XYVideoLrcView.h */,
+				D727A0A9234D7A3F00323F77 /* XYVideoLrcView.m */,
 			);
 			path = Lrc;
 			sourceTree = "<group>";
@@ -166,14 +166,14 @@
 		D727A0B0234D7A3F00323F77 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				D727A0B1234D7A3F00323F77 /* XYProgressView.m */,
 				D727A0B2234D7A3F00323F77 /* XYGifView.h */,
-				D727A0B3234D7A3F00323F77 /* XYLrcAudioView.m */,
-				D727A0B4234D7A3F00323F77 /* XYListenPlayer.m */,
-				D727A0B5234D7A3F00323F77 /* XYProgressView.h */,
 				D727A0B6234D7A3F00323F77 /* XYGifView.m */,
-				D727A0B7234D7A3F00323F77 /* XYLrcAudioView.h */,
 				D727A0B8234D7A3F00323F77 /* XYListenPlayer.h */,
+				D727A0B4234D7A3F00323F77 /* XYListenPlayer.m */,
+				D727A0B7234D7A3F00323F77 /* XYLrcAudioView.h */,
+				D727A0B3234D7A3F00323F77 /* XYLrcAudioView.m */,
+				D727A0B5234D7A3F00323F77 /* XYProgressView.h */,
+				D727A0B1234D7A3F00323F77 /* XYProgressView.m */,
 			);
 			path = Player;
 			sourceTree = "<group>";
