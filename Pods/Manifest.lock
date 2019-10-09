@@ -1,0 +1,69 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - MJExtension (3.2.1)
+  - Reachability (3.2)
+  - TFHpple (2.0.0)
+  - XYAlertHUD (1.0.1):
+    - Masonry
+    - XYAlertHUD/AlertView (= 1.0.1)
+    - XYExtensions
+  - XYAlertHUD/AlertView (1.0.1):
+    - Masonry
+    - XYExtensions
+  - XYExtensions (1.0.3):
+    - XYExtensions/Base (= 1.0.3)
+    - XYExtensions/Foundation (= 1.0.3)
+    - XYExtensions/UIKit (= 1.0.3)
+    - XYExtensions/XYNetManger (= 1.0.3)
+  - XYExtensions/Base (1.0.3)
+  - XYExtensions/Foundation (1.0.3):
+    - TFHpple
+  - XYExtensions/UIKit (1.0.3):
+    - XYExtensions/Foundation
+  - XYExtensions/XYNetManger (1.0.3):
+    - AFNetworking
+    - Reachability
+
+DEPENDENCIES:
+  - Masonry
+  - MJExtension
+  - XYAlertHUD
+  - XYExtensions
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - Reachability
+    - TFHpple
+    - XYAlertHUD
+    - XYExtensions
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
+  XYAlertHUD: 3e38da393509d9791a0dc649db1ebdf32ea39d31
+  XYExtensions: 387a02016525865b54bc77f7b962771941c61aca
+
+PODFILE CHECKSUM: d9f1a22d6ddfb893217bed81c480ee6b58ced275
+
+COCOAPODS: 1.7.0.beta.2

@@ -1,0 +1,6 @@
+framework module XYAlertHUD {
+  umbrella header "XYAlertHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}

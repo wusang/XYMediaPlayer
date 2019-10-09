@@ -1,0 +1,6 @@
+framework module XYExtensions {
+  umbrella header "XYExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}
