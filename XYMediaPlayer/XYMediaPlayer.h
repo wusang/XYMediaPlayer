@@ -10,7 +10,7 @@
 #define XYMediaPlayer_h
 
 
-#import "XYLrcAudioView.h"
+#import "XYAudioPlayView.h"
 #import "XYSubtitleParser.h"
 #import "XYLrcScrollProtocal.h"
 

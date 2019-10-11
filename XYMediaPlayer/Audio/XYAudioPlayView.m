@@ -6,16 +6,17 @@
 //  Copyright © 2019 刘亚军. All rights reserved.
 //
 
-#import "XYLrcAudioView.h"
+#import "XYAudioPlayView.h"
 #import "XYListenPlayer.h"
 #import "XYProgressView.h"
-#import "XYVideoLrcView.h"
+#import "XYAudioLrcView.h"
 #import "XYSubtitleParser.h"
-#import "XYVideoLrcModel.h"
+#import "XYMediaLrcModel.h"
 #import "XYGifView.h"
 #import "Masonry.h"
 #import <XYExtensions/XYExtensions.h>
 #import "XYAlertHUD.h"
+#import "UIImage+XYAudioView.h"
 NSString *const XYVoiceTextPlayerViewStopPlayNotification = @"XYVoiceTextPlayerViewStopPlayNotification";
 NSString *const XYVoiceTextPlayerViewPausePlayNotification = @"XYVoiceTextPlayerViewPausePlayNotification";
 static CGFloat kXYListenSliderHeight = 2;
@@ -27,7 +28,7 @@ static CGFloat kXYListenSliderHeight = 2;
 }
 @end
 
-@interface XYLrcAudioView ()<XYListenPlayerDelegate,XYVideoLrcViewDelegate,XYLrcScrollProtocal>
+@interface XYAudioPlayView ()<XYListenPlayerDelegate,XYAudioLrcViewDelegate,XYLrcScrollProtocal>
 
 
 @property (nonatomic, strong) UIImageView *imgListen;
@@ -44,13 +45,13 @@ static CGFloat kXYListenSliderHeight = 2;
 @property (strong, nonatomic) UIActivityIndicatorView *indicatorView;
 @property (nonatomic,assign) CGFloat totalDuration;
 @property (copy, nonatomic) void (^BtnTapBlock) (void);
-@property (nonatomic, strong) XYVideoLrcView *subtitleView;
-@property (nonatomic, strong) XYVideoLrcModel *lrcModel;
+@property (nonatomic, strong) XYAudioLrcView *subtitleView;
+@property (nonatomic, strong) XYMediaLrcModel *lrcModel;
 @property (nonatomic,strong) XYGifView *bgImgView;
 
 @end
 
-@implementation XYLrcAudioView
+@implementation XYAudioPlayView
 - (void)startScroll{
     if (self.scrollDelegate && [self.scrollDelegate respondsToSelector:@selector(startScroll)]) {
         [self.scrollDelegate startScroll];
@@ -83,7 +84,7 @@ static CGFloat kXYListenSliderHeight = 2;
         make.width.equalTo(self).multipliedBy(0.6);
         make.height.equalTo(self.bgImgView.mas_width).multipliedBy(0.7);
     }];
-    [self.bgImgView presentationGIFImageWithPath:[[NSBundle mainBundle] pathForResource:@"XYMediaPlayer.bundle/Audio/kq_audio_loudspeak" ofType:@"gif"] duration:5 repeatCount:0];
+    [self.bgImgView presentationGIFImageWithPath:[[NSBundle mainBundle] pathForResource:@"XYMediaPlayer.bundle/kq_audio_loudspeak" ofType:@"gif"] duration:5 repeatCount:0];
 }
 - (void)layoutUI{
     
@@ -209,7 +210,7 @@ static CGFloat kXYListenSliderHeight = 2;
                 NSDictionary *info = [[XYSubtitleParser parser] parseLrc:string];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    selfWeak.lrcModel = [[XYVideoLrcModel alloc]initWithDictionary:info];
+                    selfWeak.lrcModel = [[XYMediaLrcModel alloc]initWithDictionary:info];
                     selfWeak.lrcModel.subTitleType = 0;
                     [selfWeak showLrcContent];
                 });
@@ -239,10 +240,12 @@ static CGFloat kXYListenSliderHeight = 2;
         self.subtitleView.currentTime = progress;
     }
 }
-#pragma mark - XYVideoLrcViewDelegate
-- (void)XYVideoLrcView:(XYVideoLrcView *)lrcView seekToTime:(NSTimeInterval)time{
+#pragma mark - XYAudioLrcViewDelegate
+- (void)XYAudioLrcView:(XYAudioLrcView *)lrcView seekToTime:(NSTimeInterval)time{
     [self seekToTime:time];
 }
+
+
 
 #pragma mark -菊花
 - (void)indicatorViewStop{
@@ -424,7 +427,7 @@ static CGFloat kXYListenSliderHeight = 2;
 - (UIImageView *)imgListen{
     if (!_imgListen) {
         _imgListen = [[UIImageView alloc]initWithFrame:CGRectZero];
-        _imgListen.image = [UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_resChange_audioBg"];
+        _imgListen.image = [UIImage xyAudio_imageNamed:@"kq_resChange_audioBg"];
     }
     return _imgListen;
 }
@@ -442,7 +445,7 @@ static CGFloat kXYListenSliderHeight = 2;
 - (XYLSlider *)playSlider{
     if (!_playSlider) {
         _playSlider = [[XYLSlider alloc] initWithFrame:CGRectZero];
-        [_playSlider setThumbImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_audio_thumb"] forState:UIControlStateNormal];
+        [_playSlider setThumbImage:[UIImage xyAudio_imageNamed:@"kq_audio_thumb"] forState:UIControlStateNormal];
         _playSlider.minimumTrackTintColor = XY_ColorWithHex(0x25CDF5);
         _playSlider.maximumTrackTintColor = [UIColor clearColor];
         _playSlider.value = 0;
@@ -486,8 +489,8 @@ static CGFloat kXYListenSliderHeight = 2;
 - (UIButton *)playBtn{
     if (!_playBtn) {
         _playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playBtn setImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_audio_play"] forState:UIControlStateNormal];
-        [_playBtn setImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_audio_pause"] forState:UIControlStateSelected];
+        [_playBtn setImage:[UIImage xyAudio_imageNamed:@"kq_audio_play"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage xyAudio_imageNamed:@"kq_audio_pause"] forState:UIControlStateSelected];
         [_playBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _playBtn;
@@ -496,7 +499,7 @@ static CGFloat kXYListenSliderHeight = 2;
 - (UIButton *)stopBtn{
     if (!_stopBtn) {
         _stopBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_stopBtn setImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_audio_stop"] forState:UIControlStateNormal];
+        [_stopBtn setImage:[UIImage xyAudio_imageNamed:@"kq_audio_stop"] forState:UIControlStateNormal];
         [_stopBtn addTarget:self action:@selector(stopPlayerAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _stopBtn;
@@ -505,7 +508,7 @@ static CGFloat kXYListenSliderHeight = 2;
 - (UIButton *)subtitleBtn{
     if (!_subtitleBtn) {
         _subtitleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_subtitleBtn setImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_audio_lrc"] forState:UIControlStateNormal];
+        [_subtitleBtn setImage:[UIImage xyAudio_imageNamed:@"kq_audio_lrc"] forState:UIControlStateNormal];
 //        [_subtitleBtn addTarget:self action:@selector(subtitleClickActon) forControlEvents:UIControlEventTouchUpInside];
     }
     return _subtitleBtn;
@@ -526,9 +529,9 @@ static CGFloat kXYListenSliderHeight = 2;
     return _listenPlayer;
 }
 
-- (XYVideoLrcView *)subtitleView{
+- (XYAudioLrcView *)subtitleView{
     if (!_subtitleView) {
-        _subtitleView = [[XYVideoLrcView alloc]init];
+        _subtitleView = [[XYAudioLrcView alloc]init];
         _subtitleView.delegate = self;
         _subtitleView.scrollDelegate = self;
     }
@@ -537,7 +540,7 @@ static CGFloat kXYListenSliderHeight = 2;
 
 - (XYGifView *)bgImgView{
     if (!_bgImgView) {
-        _bgImgView = [[XYGifView alloc]initWithImage:[UIImage imageNamed:@"XYMediaPlayer.bundle/Audio/kq_resChange_audioBg"]];
+        _bgImgView = [[XYGifView alloc]initWithImage:[UIImage xyAudio_imageNamed:@"kq_resChange_audioBg"]];
     }
     return _bgImgView;
 }

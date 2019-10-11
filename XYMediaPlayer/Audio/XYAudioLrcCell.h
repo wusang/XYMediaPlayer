@@ -1,5 +1,5 @@
 //
-//  XYVideoLrcCell.h
+//  XYAudioLrcCell.h
 //  LGIJKPlayerDemo
 //
 //  Created by wuxiaoyuan on 2019/8/14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface XYVideoLrcCell : UITableViewCell
+@interface XYAudioLrcCell : UITableViewCell
 
 /** 字幕 */
 @property (nonatomic,copy) NSString *lrcText;

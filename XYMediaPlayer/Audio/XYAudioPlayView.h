@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYLrcScrollProtocal.h"
-@interface XYLrcAudioView : UIView
+@interface XYAudioPlayView : UIView
 
 @property (nonatomic, copy) NSString *url;
 - (void)seekToTime:(CGFloat) time;

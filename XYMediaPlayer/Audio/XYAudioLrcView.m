@@ -1,25 +1,25 @@
 //
-//  XYVideoLrcView.m
+//  XYAudioLrcView.m
 //  LGIJKPlayerDemo
 //
 //  Created by wuxiaoyuan on 2019/8/14.
 //  Copyright © 2019 lange. All rights reserved.
 //
 
-#import "XYVideoLrcView.h"
+#import "XYAudioLrcView.h"
 #import <Masonry/Masonry.h>
-#import "XYVideoLrcModel.h"
-#import "XYVideoLrcCell.h"
-#import "XYVideoLrcView.h"
+#import "XYMediaLrcModel.h"
+#import "XYAudioLrcCell.h"
+#import "XYAudioLrcView.h"
 
 //NSString *const XYLVoiceTextPlayerViewPausePlayNotification = @"XYVoiceTextPlayerViewPausePlayNotification";
-@interface XYVideoLrcView ()<UITableViewDelegate,UITableViewDataSource>
+@interface XYAudioLrcView ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,assign) NSInteger currentIndex;
 @property (nonatomic,assign) BOOL isStopLook;
 @end
 
-@implementation XYVideoLrcView
+@implementation XYAudioLrcView
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -42,38 +42,38 @@
     }];
 }
 
-- (void)setSrtModel:(XYVideoLrcModel *)srtModel{
+- (void)setSrtModel:(XYMediaLrcModel *)srtModel{
     _srtModel = srtModel;
     [self.tableView reloadData];
 }
 - (void)setCurrentTime:(CGFloat)currentTime{
     _currentTime = currentTime;
-    XYVideoLrcInfoModel *firstInfo = self.srtModel.srtList.firstObject;
+    XYMediaLrcInfoModel *firstInfo = self.srtModel.srtList.firstObject;
     if (currentTime == 0 || currentTime < firstInfo.beginTime) {
         if (self.currentIndex > 0) {
             NSIndexPath *lastIndexP = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-            XYVideoLrcCell *lastCell = [self.tableView cellForRowAtIndexPath:lastIndexP];
+            XYAudioLrcCell *lastCell = [self.tableView cellForRowAtIndexPath:lastIndexP];
             lastCell.choiced = NO;
             self.currentIndex = 0;
             NSIndexPath *currentIndexP = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-            XYVideoLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
+            XYAudioLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
             currentCell.choiced = YES;
         }
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }else{
         NSIndexPath *lastIndexP = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-        XYVideoLrcCell *lastCell = [self.tableView cellForRowAtIndexPath:lastIndexP];
+        XYAudioLrcCell *lastCell = [self.tableView cellForRowAtIndexPath:lastIndexP];
         lastCell.choiced = NO;
         for (int i = 0; i < self.srtModel.srtList.count; i++) {
             if (i == self.srtModel.srtList.count -1) {
                 self.currentIndex = i;
-                //                XYVideoLrcInfoModel *currentInfo = self.srtModel.srtList[i];
+                //                XYMediaLrcInfoModel *currentInfo = self.srtModel.srtList[i];
                 //                if (currentTime > currentInfo.beginTime) {
                 //                    [self scrollToIndex:i];
                 //                }
             }else{
-                XYVideoLrcInfoModel *currentInfo = self.srtModel.srtList[i];
-                XYVideoLrcInfoModel *nextInfo = self.srtModel.srtList[i+1];
+                XYMediaLrcInfoModel *currentInfo = self.srtModel.srtList[i];
+                XYMediaLrcInfoModel *nextInfo = self.srtModel.srtList[i+1];
                 if (currentTime/currentInfo.beginTime >= 0.99 &&
                     currentTime < nextInfo.beginTime) {
                     self.currentIndex = i;
@@ -90,7 +90,7 @@
             }
         }
         NSIndexPath *currentIndexP = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-        XYVideoLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
+        XYAudioLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
         currentCell.choiced = YES;
         [self.tableView scrollToRowAtIndexPath:currentIndexP atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }
@@ -104,9 +104,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    XYVideoLrcCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XYVideoLrcCell class]) forIndexPath:indexPath];
+    XYAudioLrcCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XYAudioLrcCell class]) forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    XYVideoLrcInfoModel *infoModel = self.srtModel.srtList[indexPath.row];
+    XYMediaLrcInfoModel *infoModel = self.srtModel.srtList[indexPath.row];
     cell.lrcText = infoModel.subtitles;
     if (indexPath.row == self.currentIndex) {
         cell.choiced = YES;
@@ -117,9 +117,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//   XYVideoLrcInfoModel *infoModel = self.srtModel.srtList[indexPath.row];
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(XYVideoLrcView:seekToTime:)]) {
-//        [self.delegate XYVideoLrcView:self seekToTime:infoModel.beginTime];
+//   XYMediaLrcInfoModel *infoModel = self.srtModel.srtList[indexPath.row];
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(XYMediaLrcView:seekToTime:)]) {
+//        [self.delegate XYMediaLrcView:self seekToTime:infoModel.beginTime];
 //    }
 }
 
@@ -127,7 +127,7 @@
 //- (void)scrollToIndex:(NSInteger)index{
 //    self.currentIndex = index;
 //    NSIndexPath *currentIndexP = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-//    XYVideoLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
+//    XYAudioLrcCell *currentCell = [self.tableView cellForRowAtIndexPath:currentIndexP];
 //    currentCell.choiced = YES;
 //    if (self.isStopLook) {
 //        [self.tableView scrollToRowAtIndexPath:currentIndexP atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
@@ -163,7 +163,7 @@
         _tableView.estimatedRowHeight = 30;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[XYVideoLrcCell class] forCellReuseIdentifier:NSStringFromClass([XYVideoLrcCell class])];
+        [_tableView registerClass:[XYAudioLrcCell class] forCellReuseIdentifier:NSStringFromClass([XYAudioLrcCell class])];
     }
     return _tableView;
 }

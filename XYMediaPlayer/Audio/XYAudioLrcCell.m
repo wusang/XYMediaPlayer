@@ -1,22 +1,22 @@
 //
-//  XYVideoLrcCell.m
+//  XYAudioLrcCell.m
 //  LGIJKPlayerDemo
 //
 //  Created by wuxiaoyuan on 2019/8/14.
 //  Copyright © 2019 lange. All rights reserved.
 //
 
-#import "XYVideoLrcCell.h"
+#import "XYAudioLrcCell.h"
 #import <Masonry/Masonry.h>
 #import <XYExtensions/XYExtensions.h>
 
-@interface XYVideoLrcCell ()
+@interface XYAudioLrcCell ()
 
 @property (nonatomic,strong) UILabel *labContent;
 
 @end
 
-@implementation XYVideoLrcCell
+@implementation XYAudioLrcCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

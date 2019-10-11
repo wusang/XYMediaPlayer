@@ -6,17 +6,17 @@
 //  Copyright © 2019 lange. All rights reserved.
 //
 
-#import "XYVideoLrcModel.h"
+#import "XYMediaLrcModel.h"
 #import <MJExtension/MJExtension.h>
-@implementation XYVideoLrcInfoModel
+@implementation XYMediaLrcInfoModel
 
 @end
 
 
-@implementation XYVideoLrcModel
+@implementation XYMediaLrcModel
 
 + (NSDictionary *)mj_objectClassInArray{
-    return @{@"srtList":[XYVideoLrcInfoModel class]};
+    return @{@"srtList":[XYMediaLrcInfoModel class]};
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)aDictionary{

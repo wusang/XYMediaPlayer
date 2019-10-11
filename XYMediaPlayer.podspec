@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XYMediaPlayer"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "音频播放器,视频播放器，字幕"
 
   # 项目主页地址
@@ -27,23 +27,12 @@ Pod::Spec.new do |s|
   s.source_files  = "XYMediaPlayer/XYMediaPlayer.h"
   # 资源文件
   s.resources = "XYMediaPlayer/XYMediaPlayer.bundle"
+  # 下级文件
+  s.source_files = "XYMediaPlayer/*.{h,m}"
 
-
-  s.source_files = "XYMediaPlayer/*.{h,m}","XYMediaPlayer/Audio/*.{h,m}","XYMediaPlayer/Audio/Player/*.{h,m}","XYMediaPlayer/Audio/Lrc/*.{h,m}"
-  
-
-  s.subspec "Player" do |player|
-    player.source_files =  'XYMediaPlayer/Audio/Player/**/*'
-    player.dependency 'XYMediaPlayer/Lrc'
+  s.subspec "Audio" do |ss|
+  ss.source_files =  "XYMediaPlayer/Audio/*.{h,m}"
   end
-
-  s.subspec "Lrc" do |lrc|
-    lrc.source_files =  'XYMediaPlayer/Audio/Lrc/**/*'
-  end 
-
- 
-
-   
 
   # 是否支持ARC 
   s.requires_arc = true

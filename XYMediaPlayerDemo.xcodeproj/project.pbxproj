@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		855DDC95A1868DCF8B316228 /* Pods_XYMediaPlayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7790ABAB0124C53074332C /* Pods_XYMediaPlayerDemo.framework */; };
 		D727A0BA234D7A3F00323F77 /* XYSubtitleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0A7234D7A3F00323F77 /* XYSubtitleParser.m */; };
-		D727A0BB234D7A3F00323F77 /* XYVideoLrcCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0A8234D7A3F00323F77 /* XYVideoLrcCell.m */; };
-		D727A0BC234D7A3F00323F77 /* XYVideoLrcView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0A9234D7A3F00323F77 /* XYVideoLrcView.m */; };
-		D727A0BD234D7A3F00323F77 /* XYVideoLrcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0AB234D7A3F00323F77 /* XYVideoLrcModel.m */; };
+		D727A0BB234D7A3F00323F77 /* XYAudioLrcCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0A8234D7A3F00323F77 /* XYAudioLrcCell.m */; };
+		D727A0BC234D7A3F00323F77 /* XYAudioLrcView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0A9234D7A3F00323F77 /* XYAudioLrcView.m */; };
+		D727A0BD234D7A3F00323F77 /* XYMediaLrcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0AB234D7A3F00323F77 /* XYMediaLrcModel.m */; };
 		D727A0BE234D7A3F00323F77 /* XYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0B1234D7A3F00323F77 /* XYProgressView.m */; };
-		D727A0BF234D7A3F00323F77 /* XYLrcAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0B3234D7A3F00323F77 /* XYLrcAudioView.m */; };
+		D727A0BF234D7A3F00323F77 /* XYAudioPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0B3234D7A3F00323F77 /* XYAudioPlayView.m */; };
 		D727A0C0234D7A3F00323F77 /* XYListenPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0B4234D7A3F00323F77 /* XYListenPlayer.m */; };
 		D727A0C1234D7A3F00323F77 /* XYGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = D727A0B6234D7A3F00323F77 /* XYGifView.m */; };
 		D727A0C2234D7A3F00323F77 /* XYMediaPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D727A0B9234D7A3F00323F77 /* XYMediaPlayer.bundle */; };
+		D74134EC234F5E1F00924745 /* UIImage+XYAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74134E8234F5E1F00924745 /* UIImage+XYAudioView.m */; };
+		D74134ED234F5E1F00924745 /* NSBundle+XYAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74134EA234F5E1F00924745 /* NSBundle+XYAudioView.m */; };
 		D784A9AD2342040E00D66C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D784A9AC2342040E00D66C52 /* AppDelegate.m */; };
 		D784A9B02342040E00D66C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D784A9AF2342040E00D66C52 /* ViewController.m */; };
 		D784A9B32342040E00D66C52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D784A9B12342040E00D66C52 /* Main.storyboard */; };
@@ -50,23 +52,27 @@
 		AE7790ABAB0124C53074332C /* Pods_XYMediaPlayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYMediaPlayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D727A0A5234D7A3F00323F77 /* XYMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMediaPlayer.h; sourceTree = "<group>"; };
 		D727A0A7234D7A3F00323F77 /* XYSubtitleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYSubtitleParser.m; sourceTree = "<group>"; };
-		D727A0A8234D7A3F00323F77 /* XYVideoLrcCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYVideoLrcCell.m; sourceTree = "<group>"; };
-		D727A0A9234D7A3F00323F77 /* XYVideoLrcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYVideoLrcView.m; sourceTree = "<group>"; };
+		D727A0A8234D7A3F00323F77 /* XYAudioLrcCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAudioLrcCell.m; sourceTree = "<group>"; };
+		D727A0A9234D7A3F00323F77 /* XYAudioLrcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAudioLrcView.m; sourceTree = "<group>"; };
 		D727A0AA234D7A3F00323F77 /* XYLrcScrollProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLrcScrollProtocal.h; sourceTree = "<group>"; };
-		D727A0AB234D7A3F00323F77 /* XYVideoLrcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYVideoLrcModel.m; sourceTree = "<group>"; };
-		D727A0AC234D7A3F00323F77 /* XYVideoLrcCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYVideoLrcCell.h; sourceTree = "<group>"; };
+		D727A0AB234D7A3F00323F77 /* XYMediaLrcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMediaLrcModel.m; sourceTree = "<group>"; };
+		D727A0AC234D7A3F00323F77 /* XYAudioLrcCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAudioLrcCell.h; sourceTree = "<group>"; };
 		D727A0AD234D7A3F00323F77 /* XYSubtitleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSubtitleParser.h; sourceTree = "<group>"; };
-		D727A0AE234D7A3F00323F77 /* XYVideoLrcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYVideoLrcModel.h; sourceTree = "<group>"; };
-		D727A0AF234D7A3F00323F77 /* XYVideoLrcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYVideoLrcView.h; sourceTree = "<group>"; };
+		D727A0AE234D7A3F00323F77 /* XYMediaLrcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMediaLrcModel.h; sourceTree = "<group>"; };
+		D727A0AF234D7A3F00323F77 /* XYAudioLrcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAudioLrcView.h; sourceTree = "<group>"; };
 		D727A0B1234D7A3F00323F77 /* XYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYProgressView.m; sourceTree = "<group>"; };
 		D727A0B2234D7A3F00323F77 /* XYGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGifView.h; sourceTree = "<group>"; };
-		D727A0B3234D7A3F00323F77 /* XYLrcAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLrcAudioView.m; sourceTree = "<group>"; };
+		D727A0B3234D7A3F00323F77 /* XYAudioPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAudioPlayView.m; sourceTree = "<group>"; };
 		D727A0B4234D7A3F00323F77 /* XYListenPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYListenPlayer.m; sourceTree = "<group>"; };
 		D727A0B5234D7A3F00323F77 /* XYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYProgressView.h; sourceTree = "<group>"; };
 		D727A0B6234D7A3F00323F77 /* XYGifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGifView.m; sourceTree = "<group>"; };
-		D727A0B7234D7A3F00323F77 /* XYLrcAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLrcAudioView.h; sourceTree = "<group>"; };
+		D727A0B7234D7A3F00323F77 /* XYAudioPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAudioPlayView.h; sourceTree = "<group>"; };
 		D727A0B8234D7A3F00323F77 /* XYListenPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYListenPlayer.h; sourceTree = "<group>"; };
 		D727A0B9234D7A3F00323F77 /* XYMediaPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XYMediaPlayer.bundle; sourceTree = "<group>"; };
+		D74134E8234F5E1F00924745 /* UIImage+XYAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XYAudioView.m"; sourceTree = "<group>"; };
+		D74134E9234F5E1F00924745 /* NSBundle+XYAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+XYAudioView.h"; sourceTree = "<group>"; };
+		D74134EA234F5E1F00924745 /* NSBundle+XYAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+XYAudioView.m"; sourceTree = "<group>"; };
+		D74134EB234F5E1F00924745 /* UIImage+XYAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XYAudioView.h"; sourceTree = "<group>"; };
 		D784A9A82342040E00D66C52 /* XYMediaPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYMediaPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D784A9AB2342040E00D66C52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D784A9AC2342040E00D66C52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,41 +147,29 @@
 		D727A0A4234D7A3F00323F77 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				D727A0A6234D7A3F00323F77 /* Lrc */,
-				D727A0B0234D7A3F00323F77 /* Player */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
-		D727A0A6234D7A3F00323F77 /* Lrc */ = {
-			isa = PBXGroup;
-			children = (
+				D74134E9234F5E1F00924745 /* NSBundle+XYAudioView.h */,
+				D74134EA234F5E1F00924745 /* NSBundle+XYAudioView.m */,
+				D74134EB234F5E1F00924745 /* UIImage+XYAudioView.h */,
+				D74134E8234F5E1F00924745 /* UIImage+XYAudioView.m */,
 				D727A0AA234D7A3F00323F77 /* XYLrcScrollProtocal.h */,
 				D727A0AD234D7A3F00323F77 /* XYSubtitleParser.h */,
 				D727A0A7234D7A3F00323F77 /* XYSubtitleParser.m */,
-				D727A0AC234D7A3F00323F77 /* XYVideoLrcCell.h */,
-				D727A0A8234D7A3F00323F77 /* XYVideoLrcCell.m */,
-				D727A0AE234D7A3F00323F77 /* XYVideoLrcModel.h */,
-				D727A0AB234D7A3F00323F77 /* XYVideoLrcModel.m */,
-				D727A0AF234D7A3F00323F77 /* XYVideoLrcView.h */,
-				D727A0A9234D7A3F00323F77 /* XYVideoLrcView.m */,
-			);
-			path = Lrc;
-			sourceTree = "<group>";
-		};
-		D727A0B0234D7A3F00323F77 /* Player */ = {
-			isa = PBXGroup;
-			children = (
+				D727A0AC234D7A3F00323F77 /* XYAudioLrcCell.h */,
+				D727A0A8234D7A3F00323F77 /* XYAudioLrcCell.m */,
+				D727A0AE234D7A3F00323F77 /* XYMediaLrcModel.h */,
+				D727A0AB234D7A3F00323F77 /* XYMediaLrcModel.m */,
+				D727A0AF234D7A3F00323F77 /* XYAudioLrcView.h */,
+				D727A0A9234D7A3F00323F77 /* XYAudioLrcView.m */,
 				D727A0B2234D7A3F00323F77 /* XYGifView.h */,
 				D727A0B6234D7A3F00323F77 /* XYGifView.m */,
 				D727A0B8234D7A3F00323F77 /* XYListenPlayer.h */,
 				D727A0B4234D7A3F00323F77 /* XYListenPlayer.m */,
-				D727A0B7234D7A3F00323F77 /* XYLrcAudioView.h */,
-				D727A0B3234D7A3F00323F77 /* XYLrcAudioView.m */,
+				D727A0B7234D7A3F00323F77 /* XYAudioPlayView.h */,
+				D727A0B3234D7A3F00323F77 /* XYAudioPlayView.m */,
 				D727A0B5234D7A3F00323F77 /* XYProgressView.h */,
 				D727A0B1234D7A3F00323F77 /* XYProgressView.m */,
 			);
-			path = Player;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		D784A99F2342040E00D66C52 = {
@@ -411,16 +405,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D784A9B02342040E00D66C52 /* ViewController.m in Sources */,
-				D727A0BF234D7A3F00323F77 /* XYLrcAudioView.m in Sources */,
-				D727A0BB234D7A3F00323F77 /* XYVideoLrcCell.m in Sources */,
-				D727A0BD234D7A3F00323F77 /* XYVideoLrcModel.m in Sources */,
+				D727A0BF234D7A3F00323F77 /* XYAudioPlayView.m in Sources */,
+				D727A0BB234D7A3F00323F77 /* XYAudioLrcCell.m in Sources */,
+				D727A0BD234D7A3F00323F77 /* XYMediaLrcModel.m in Sources */,
 				D784A9BB2342040F00D66C52 /* main.m in Sources */,
 				D727A0C1234D7A3F00323F77 /* XYGifView.m in Sources */,
+				D74134EC234F5E1F00924745 /* UIImage+XYAudioView.m in Sources */,
 				D727A0BE234D7A3F00323F77 /* XYProgressView.m in Sources */,
 				D727A0C0234D7A3F00323F77 /* XYListenPlayer.m in Sources */,
-				D727A0BC234D7A3F00323F77 /* XYVideoLrcView.m in Sources */,
+				D727A0BC234D7A3F00323F77 /* XYAudioLrcView.m in Sources */,
 				D784A9AD2342040E00D66C52 /* AppDelegate.m in Sources */,
 				D727A0BA234D7A3F00323F77 /* XYSubtitleParser.m in Sources */,
+				D74134ED234F5E1F00924745 /* NSBundle+XYAudioView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +591,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = XYMediaPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = XYMediaPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
